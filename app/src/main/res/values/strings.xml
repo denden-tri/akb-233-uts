@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DenzSakura</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="pager_1">Ini Page 1</string>
+    <string name="pager_2">Ini Page 2</string>
+    <string name="pager_3">Ini Page 3</string>
+</resources>
