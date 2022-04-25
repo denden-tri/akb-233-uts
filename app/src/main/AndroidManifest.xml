@@ -19,7 +19,6 @@
         <activity
             android:name=".ui.pager.ScreenSlidePagerActivity"
             android:exported="true"
-            android:theme="@style/Theme.DenzSakura.Starting"
             >
 
         </activity>
@@ -27,6 +26,7 @@
         <activity
             android:name=".RoutingActivity"
             android:exported="true"
+            android:theme="@style/Theme.DenzSakura.Starting"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
