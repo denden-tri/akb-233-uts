@@ -1,16 +1,16 @@
-package com.denztri.denzsakura.ui.notifications;
+package com.denztri.denzsakura.ui.gallery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
-
+public class GalleryViewModel extends ViewModel {
+    // TODO: Implement the ViewModel
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public GalleryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is gallery fragment");
     }
 
     public LiveData<String> getText() {
