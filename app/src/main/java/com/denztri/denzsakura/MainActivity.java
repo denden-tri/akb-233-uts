@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.denztri.denzsakura.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        findViewById(R.id.nav_view);
+       BottomNavigationView navView = findViewById(R.id.nav_view);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host_fragment_activity_main);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
+
+        navView.setOnApplyWindowInsetsListener(null);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

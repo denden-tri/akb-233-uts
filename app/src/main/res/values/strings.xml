@@ -8,9 +8,35 @@
     <string name="title_music">Music</string>
     <string name="title_profile">Profile</string>
 
+    <string name="subtitle_profile">Profile</string>
+    <string name="subtitle_interest">Interest</string>
+    <string name="subtitle_daily_act">Daily Activity</string>
+    <string name="subtitle_friends_list">Friends List</string>
+    <string name="subtitle_contact">Contact</string>
+    <string name="subtitle_find_me">Find Me</string>
+    <string name="subtitle_about">About</string>
+
     <string name="pager_1">Ini Page 1</string>
     <string name="pager_2">Ini Page 2</string>
     <string name="pager_3">Ini Page 3</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!-- Home and profile-->
+    <string name="me_name">Denden Triana</string>
+    <string name="me_description">Battery about to die</string>
+    <string name="me_hobby">Ngidol</string>
+    <string name="sub_hobby">Hobby</string>
+    <string name="me_makes">Potato 🥔🥔</string>
+    <string name="me_mikes">Mineral Water</string>
+    <string name="sub_makes">Fav Food</string>
+    <string name="sub_mikes">Fav Drink</string>
+    <string name="me_cita">Placeholder</string>
+    <string name="sub_cita">Cita-Cita</string>
+    <string name="sub_interested_to">Interested to</string>
+    <string name="nodejs_logo">NodeJS Logo</string>
+    <string name="reactjs_logo">ReactJS Logo</string>
+    <string name="javascript_logo">Javascript Logo</string>
+    <string name="twice_logo">Twice Logo</string>
+    <string name="izone_logo">IZ*ONE Logo</string>
+    <string name="game">Gaming</string>
+
 </resources>
