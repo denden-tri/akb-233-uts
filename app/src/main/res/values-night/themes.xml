@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowBackground">@color/gunmetal</item>
+        <item name="fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="Theme.DenzSakura.Starting" parent="Theme.SplashScreen">
