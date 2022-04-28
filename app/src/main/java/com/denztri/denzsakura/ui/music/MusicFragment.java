@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentMusicBinding;
 
 public class MusicFragment extends Fragment {
@@ -23,6 +24,9 @@ public class MusicFragment extends Fragment {
 
         binding = FragmentMusicBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        TextView textTitle = getActivity().findViewById(R.id.appbar_title);
+        textTitle.setText(R.string.title_music);
 
         final TextView textView = binding.textMusic;
         musicViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

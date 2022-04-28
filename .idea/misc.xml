@@ -5,10 +5,14 @@
       <map>
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/drawable/ic_gallery.xml" value="0.221" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/drawable/ic_home.xml" value="0.221" />
+        <entry key="..\:/Projects/Android/UTS1/app/src/main/res/drawable/ic_launcher_denz.xml" value="0.221" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/drawable/ic_music.xml" value="0.221" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/drawable/ic_profile.xml" value="0.221" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/activity_screen_slide.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/center_action_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/center_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/center_toolbarl.xml" value="0.11458333333333333" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/fragment_daily.xml" value="0.2" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/fragment_first_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android/UTS1/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
