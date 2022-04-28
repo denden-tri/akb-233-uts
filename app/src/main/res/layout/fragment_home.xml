@@ -24,15 +24,25 @@
             android:layout_height="wrap_content"
             android:padding="4dp">
 
+            <TextView
+                android:id="@+id/home_profile_diri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_profile"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/home_foto_diri"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:padding="1dp"
                 android:src="@drawable/ic_foto_diri"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_profile_diri"
                 app:shapeAppearance="@style/rounded_pict"
                 app:strokeColor="?colorPrimary"
                 app:strokeWidth="0.5dp" />
@@ -46,7 +56,8 @@
                 android:text="@string/me_name"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/home_foto_diri"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/home_profile_diri"
+                />
 
             <TextView
                 android:id="@+id/home_desk_diri"
