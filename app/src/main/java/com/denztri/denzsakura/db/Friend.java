@@ -14,4 +14,18 @@ public class Friend {
 
     @ColumnInfo(name = "last_name")
     public String lastName;
+
+    public Friend(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public static Friend[] populateData(){
+        return new Friend[]{
+          new Friend("Tri","Tafriyadi"),
+          new Friend("Joyson","Sitorus"),
+          new Friend("Najib", "Raffi"),
+                new Friend("Rheza","P"),
+        };
+    }
 }

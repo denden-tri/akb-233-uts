@@ -6,9 +6,10 @@
     tools:context=".ui.daily.tab.FriendFragment"
     android:padding="4dp">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friend_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/tab_friends" />
+        />
 
 </FrameLayout>

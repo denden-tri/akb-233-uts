@@ -28,8 +28,9 @@
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@id/daily_tab_layout"
         android:id="@+id/daily_linear"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="4dp"
         />
