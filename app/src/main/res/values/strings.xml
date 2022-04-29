@@ -38,5 +38,7 @@
     <string name="twice_logo">Twice Logo</string>
     <string name="izone_logo">IZ*ONE Logo</string>
     <string name="game">Gaming</string>
+    <string name="tab_friends">Friends</string>
+    <string name="tab_activity">Activity</string>
 
 </resources>
