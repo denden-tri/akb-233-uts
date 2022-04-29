@@ -1,5 +1,6 @@
 package com.denztri.denzsakura;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Gravity;
 
@@ -13,8 +14,11 @@ import androidx.navigation.ui.NavigationUI;
 import com.denztri.denzsakura.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("InflateParams")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         navView.setOnApplyWindowInsetsListener(null);
 
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(getLayoutInflater().inflate(R.layout.center_bar, null),
                 new ActionBar.LayoutParams(
