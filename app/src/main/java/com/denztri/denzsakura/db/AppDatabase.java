@@ -3,6 +3,7 @@ package com.denztri.denzsakura.db;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.room.AutoMigration;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -10,7 +11,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
-@Database(entities = {Friend.class}, version = 1)
+@Database(entities = {Friend.class}, version = 2,
+        autoMigrations = {@AutoMigration(from = 1, to = 2)})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract FriendDao friendDao();
 
@@ -34,4 +36,5 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
 }
