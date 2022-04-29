@@ -25,7 +25,7 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        TextView textTitle = getActivity().findViewById(R.id.appbar_title);
+        TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
         textTitle.setText(R.string.title_profile);
 
         final TextView textView = binding.textProfile;

@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        TextView textTitle = getActivity().findViewById(R.id.appbar_title);
+        TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
         textTitle.setText(R.string.title_home);
 
         return root;
