@@ -4,16 +4,297 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:padding="10dp"
+    android:paddingBottom="?attr/actionBarSize"
+    >
 
-    <TextView
-        android:id="@+id/text_home"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/home_diri_container"
+        style="@style/Theme.DenzSakura.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardElevation="24dp"
+        app:cardMaxElevation="26dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/home_profile_diri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_profile"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/home_foto_diri"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:padding="1dp"
+                android:src="@drawable/ic_foto_diri"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_profile_diri"
+                app:shapeAppearance="@style/rounded_pict"
+                app:strokeColor="?colorPrimary"
+                app:strokeWidth="0.5dp" />
+
+            <TextView
+                android:id="@+id/home_nama_diri"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="@string/me_name"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/home_foto_diri"
+                app:layout_constraintTop_toBottomOf="@id/home_profile_diri"
+                />
+
+            <TextView
+                android:id="@+id/home_desk_diri"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/me_description"
+                app:layout_constraintStart_toEndOf="@id/home_foto_diri"
+                app:layout_constraintTop_toBottomOf="@id/home_nama_diri" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/home_interest_container"
+        style="@style/Theme.DenzSakura.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/home_diri_container"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            >
+
+            <TextView
+                android:id="@+id/home_interest_subtitle"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/subtitle_interest"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/home_hobby_title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_hobby"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_interest_subtitle" />
+
+            <TextView
+                android:id="@+id/home_hobby"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:text="@string/me_hobby"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintStart_toEndOf="@id/home_hobby_title"
+                app:layout_constraintTop_toBottomOf="@id/home_interest_subtitle" />
+
+            <TextView
+                android:id="@+id/home_makes_title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_makes"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_hobby_title" />
+
+            <TextView
+                android:id="@+id/home_makes"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:text="@string/me_makes"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintStart_toEndOf="@id/home_makes_title"
+                app:layout_constraintTop_toBottomOf="@id/home_hobby" />
+
+            <TextView
+                android:id="@+id/home_mikes_title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_mikes"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_makes_title" />
+
+            <TextView
+                android:id="@+id/home_mikes"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:text="@string/me_mikes"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintStart_toEndOf="@id/home_mikes_title"
+                app:layout_constraintTop_toBottomOf="@id/home_makes" />
+            <TextView
+                android:id="@+id/home_cita_title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_cita"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_mikes_title" />
+
+            <TextView
+                android:id="@+id/home_cita"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:text="@string/me_cita"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintStart_toEndOf="@id/home_cita_title"
+                app:layout_constraintTop_toBottomOf="@id/home_mikes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/home_interest_container_2"
+        style="@style/Theme.DenzSakura.CardView"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/home_interest_container"
+        tools:layout_editor_absoluteX="10dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/home_interest_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/TextAppearance.AppCompat.Headline"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/sub_interested_to"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <GridLayout
+                android:id="@+id/home_interest_to_grid_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="3"
+                app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                android:padding="4dp"
+                >
+                <ImageView
+                    android:id="@+id/home_nodejs"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                    android:src="@drawable/ic_nodejs_logo"
+                    android:padding="4dp"
+                    android:contentDescription="@string/nodejs_logo" />
+
+                <ImageView
+                    android:id="@+id/home_reactjs"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:contentDescription="@string/reactjs_logo"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_reactjs_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                    tools:ignore="ImageContrastCheck" />
+                <ImageView
+                    android:id="@+id/home_js"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                    android:src="@drawable/ic_js_logo"
+                    android:padding="4dp"
+                    android:contentDescription="@string/javascript_logo" />
+                <ImageView
+                    android:id="@+id/home_izone"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                    android:src="@drawable/ic_izone_logo"
+                    android:padding="4dp"
+                    android:contentDescription="@string/izone_logo" />
+
+                <ImageView
+                    android:id="@+id/home_twice"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:contentDescription="@string/twice_logo"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_twice_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                    tools:ignore="ImageContrastCheck" />
+                <ImageView
+                    android:id="@+id/home_game"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_interest_to"
+                    android:src="@drawable/ic_baseline_games_24"
+                    android:padding="4dp"
+                    android:contentDescription="@string/game" />
+            </GridLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
