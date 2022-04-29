@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -23,6 +24,9 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
+        textTitle.setText(R.string.title_home);
 
         return root;
     }

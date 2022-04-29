@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends Fragment {
@@ -23,6 +24,9 @@ public class ProfileFragment extends Fragment {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
+        textTitle.setText(R.string.title_profile);
 
         final TextView textView = binding.textProfile;
         profileBinding.getText().observe(getViewLifecycleOwner(), textView::setText);
