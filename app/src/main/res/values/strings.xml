@@ -40,5 +40,6 @@
     <string name="game">Gaming</string>
     <string name="tab_friends">Friends</string>
     <string name="tab_activity">Activity</string>
+    <string name="friend_photo">Friend Photo</string>
 
 </resources>

@@ -39,11 +39,8 @@ public class FriendFragment extends Fragment {
 
     private void initRecycle(){
         RecyclerView recyclerView = binding.friendRecycleView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(binding.getRoot().getContext(),
-                DividerItemDecoration.VERTICAL);
-        recyclerView.addItemDecoration(dividerItemDecoration);
+        recyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext(),
+                LinearLayoutManager.HORIZONTAL, false));
 
         friendListAdapter = new FriendListAdapter(binding.getRoot().getContext());
         recyclerView.setAdapter(friendListAdapter);
