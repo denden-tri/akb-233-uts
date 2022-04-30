@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.denztri.denzsakura">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,16 +14,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            >
-
-        </activity>
+            />
 
         <activity
             android:name=".ui.pager.ScreenSlidePagerActivity"
             android:exported="true"
-            >
-
-        </activity>
+            />
 
         <activity
             android:name=".RoutingActivity"
