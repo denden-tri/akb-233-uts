@@ -11,10 +11,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
-@Database(entities = {Friend.class}, version = 2,
-        autoMigrations = {@AutoMigration(from = 1, to = 2)})
+@Database(entities = {Friend.class, Activity.class}, version = 3,
+        autoMigrations = {@AutoMigration(from = 2, to = 3)})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract FriendDao friendDao();
+    public abstract ActivityDao activityDao();
 
     private static AppDatabase INSTANCE;
 
@@ -29,12 +30,15 @@ public abstract class AppDatabase extends RoomDatabase {
                         @Override
                         public void onCreate(@NonNull SupportSQLiteDatabase db) {
                             super.onCreate(db);
-                            Executors.newSingleThreadExecutor().execute(() -> getDbInstance(context).friendDao().insert(Friend.populateData()));
+                            Executors.newSingleThreadExecutor().execute(() -> {
+                                getDbInstance(context).friendDao().insert(Friend.populateData());
+                                getDbInstance(context).activityDao().insert(Activity.populateData());
+                            });
+
                         }
                     })
                     .build();
         }
         return INSTANCE;
     }
-
 }
