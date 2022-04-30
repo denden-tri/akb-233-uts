@@ -13,4 +13,7 @@ public interface FriendDao {
 
     @Insert
     void insert(Friend... friends);
+
+    @Query("DELETE FROM friend")
+    void deleteAll();
 }
