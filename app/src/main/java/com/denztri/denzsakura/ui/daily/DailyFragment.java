@@ -8,10 +8,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import com.denztri.denzsakura.R;
 
 import com.denztri.denzsakura.databinding.FragmentDailyBinding;
+import com.denztri.denzsakura.ui.daily.tab.ActivityFragment;
+import com.denztri.denzsakura.ui.daily.tab.FriendFragment;
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.Objects;
 
 public class DailyFragment extends Fragment {
 
@@ -28,9 +35,24 @@ public class DailyFragment extends Fragment {
         TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
         textTitle.setText(R.string.title_daily);
 
-        final TextView textView = binding.textDaily;
-        dailyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        TabLayout tabLayout = binding.dailyTabLayout;
+        selectedTab(0);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                selectedTab(tab.getPosition());
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
         return root;
     }
 
@@ -40,4 +62,18 @@ public class DailyFragment extends Fragment {
         binding = null;
     }
 
+    private void selectedTab(int pos){
+        Fragment tabFragment;
+        if (pos == 1) {
+            tabFragment = new FriendFragment();
+        } else {
+            tabFragment = new ActivityFragment();
+        }
+
+        FragmentManager fm = getChildFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.daily_linear, tabFragment);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        ft.commit();
+    }
 }
