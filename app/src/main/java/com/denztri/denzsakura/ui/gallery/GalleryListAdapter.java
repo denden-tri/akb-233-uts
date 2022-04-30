@@ -2,24 +2,19 @@ package com.denztri.denzsakura.ui.gallery;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.denztri.denzsakura.R;
-import com.denztri.denzsakura.db.Activity;
-import com.denztri.denzsakura.ui.daily.tab.ActivityListAdapter;
 
 import java.util.List;
-
-import retrofit2.Call;
 
 public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.GalleryViewHolder> {
     private final Context context;
@@ -48,6 +43,9 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
         String url = this.galleryLists.get(position).getUrl();
         Glide.with(context)
                 .load(url)
+                .placeholder(R.drawable.ic_gallery)
+                .fitCenter()
+                .fallback(R.drawable.ic_gallery)
                 .into(holder.img);
     }
 
