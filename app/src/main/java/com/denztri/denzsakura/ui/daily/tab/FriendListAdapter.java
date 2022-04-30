@@ -2,9 +2,11 @@ package com.denztri.denzsakura.ui.daily.tab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,10 +38,15 @@ public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.Fr
         return new FriendViewHolder(view);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull FriendListAdapter.FriendViewHolder holder, int position) {
         holder.firstName.setText(this.friendList.get(position).firstName);
         holder.lastName.setText(this.friendList.get(position).lastName);
+        holder.img
+                .setImageDrawable(context.getResources()
+                        .getDrawable(getDrawableIdByName(this.friendList.get(position)
+                        .drawableName)));
     }
 
     @Override
@@ -50,10 +57,17 @@ public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.Fr
     public static class FriendViewHolder extends RecyclerView.ViewHolder {
         TextView firstName;
         TextView lastName;
+        ImageView img;
         public FriendViewHolder(@NonNull View itemView) {
             super(itemView);
             firstName = itemView.findViewById(R.id.friend_recycle_firstname);
             lastName = itemView.findViewById(R.id.friend_recycle_lastname);
+            img = itemView.findViewById(R.id.friend_recycle_img);
         }
+    }
+
+    private int getDrawableIdByName(String name){
+        Resources res = context.getResources();
+        return res.getIdentifier(name, "drawable", context.getPackageName());
     }
 }

@@ -15,17 +15,22 @@ public class Friend {
     @ColumnInfo(name = "last_name")
     public String lastName;
 
-    public Friend(String firstName, String lastName){
+    @ColumnInfo(name = "drawable_name")
+    public String drawableName;
+
+    public Friend(String firstName, String lastName,String drawableName){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.drawableName = drawableName;
     }
 
     public static Friend[] populateData(){
         return new Friend[]{
-          new Friend("Tri","Tafriyadi"),
-          new Friend("Joyson","Sitorus"),
-          new Friend("Najib", "Raffi"),
-                new Friend("Rheza","P"),
+          new Friend("Tri","Tafriyadi", "ic_tri_chad"),
+          new Friend("Tzuyu","Twice", "ic_cuyu"),
+          new Friend("Najib", "Raffi", "ic_jib"),
+                new Friend("Rheza","Pramana", "ic_baseline_person_24"),
+                new Friend("Miyawaki", "Sakura", "ic_cat_sakura")
         };
     }
 }

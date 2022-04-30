@@ -7,9 +7,17 @@
     android:padding="4dp"
     >
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/tab_activity" />
-
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_fab"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_refresh_24"
+        android:contentDescription="@string/db_refresh_on_dev" />
 </FrameLayout>

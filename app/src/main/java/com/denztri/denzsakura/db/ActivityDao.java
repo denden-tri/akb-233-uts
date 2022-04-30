@@ -7,13 +7,13 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface FriendDao {
-    @Query("SELECT * FROM friend")
-    List<Friend> getAllFriends();
+public interface ActivityDao {
+    @Query("SELECT * FROM activity")
+    List<Activity> getAllActivities();
 
     @Insert
-    void insert(Friend... friends);
+    void insert(Activity... Activities);
 
-    @Query("DELETE FROM friend")
+    @Query("DELETE FROM activity")
     void deleteAll();
 }
