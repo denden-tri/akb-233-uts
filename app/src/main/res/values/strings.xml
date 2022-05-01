@@ -43,5 +43,6 @@
     <string name="friend_photo">Friend Photo</string>
     <string name="activity_photo">Activity Photo</string>
     <string name="db_refresh_on_dev">DB Refresh on DEV</string>
+    <string name="gallery_cat">Gambar Kucing</string>
 
 </resources>

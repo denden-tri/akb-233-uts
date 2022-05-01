@@ -1,23 +1,26 @@
 package com.denztri.denzsakura.ui.gallery;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentGalleryBinding;
 
-public class GalleryFragment extends Fragment {
+import java.io.IOException;
 
+public class GalleryFragment extends Fragment {
+    private GalleryListAdapter galleryListAdapter;
     private FragmentGalleryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -29,11 +32,24 @@ public class GalleryFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        ProgressBar progressBar = binding.galleryCircleProgress;
+        progressBar.setVisibility(View.VISIBLE);
+
         TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
         textTitle.setText(R.string.title_gallery);
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        initRecycle();
+
+        try {
+            galleryViewModel.getList().observe(getViewLifecycleOwner(),
+                    galleryLists -> {
+                        galleryListAdapter.setGalleryLists(galleryLists);
+                        progressBar.setVisibility(View.GONE);
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return root;
     }
 
@@ -41,6 +57,15 @@ public class GalleryFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void initRecycle(){
+        RecyclerView recyclerView = binding.galleryRecycle;
+        recyclerView.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(),
+                3));
+
+        galleryListAdapter = new GalleryListAdapter(binding.getRoot().getContext());
+        recyclerView.setAdapter(galleryListAdapter);
     }
 
 }

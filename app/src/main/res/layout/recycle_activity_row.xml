@@ -20,6 +20,7 @@
             android:layout_weight="1"
             android:id="@+id/activity_name"
             style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textColor="?attr/colorOnSecondary"
             />
         <ImageView
             android:id="@+id/activity_recycle_img"

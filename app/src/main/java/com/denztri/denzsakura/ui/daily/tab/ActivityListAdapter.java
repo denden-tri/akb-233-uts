@@ -51,7 +51,11 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
 
     @Override
     public int getItemCount() {
-        return this.activityList.size();
+        if (activityList != null){
+            return this.activityList.size();
+        }else {
+            return 0;
+        }
     }
 
     public static class ActivityViewHolder extends RecyclerView.ViewHolder {
