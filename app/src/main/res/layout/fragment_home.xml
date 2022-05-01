@@ -117,7 +117,6 @@
                 android:gravity="center|start"
                 android:text="@string/me_hobby"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnPrimary"
                 app:layout_constraintStart_toEndOf="@id/home_hobby_title"
                 app:layout_constraintTop_toBottomOf="@id/home_interest_subtitle" />
 
@@ -140,7 +139,6 @@
                 android:gravity="center|start"
                 android:text="@string/me_makes"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnPrimary"
                 app:layout_constraintStart_toEndOf="@id/home_makes_title"
                 app:layout_constraintTop_toBottomOf="@id/home_hobby" />
 
@@ -163,7 +161,6 @@
                 android:gravity="center|start"
                 android:text="@string/me_mikes"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnPrimary"
                 app:layout_constraintStart_toEndOf="@id/home_mikes_title"
                 app:layout_constraintTop_toBottomOf="@id/home_makes" />
             <TextView
@@ -185,7 +182,6 @@
                 android:gravity="center|start"
                 android:text="@string/me_cita"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnPrimary"
                 app:layout_constraintStart_toEndOf="@id/home_cita_title"
                 app:layout_constraintTop_toBottomOf="@id/home_mikes" />
         </androidx.constraintlayout.widget.ConstraintLayout>
