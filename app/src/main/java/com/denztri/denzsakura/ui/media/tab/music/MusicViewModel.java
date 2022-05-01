@@ -1,4 +1,4 @@
-package com.denztri.denzsakura.ui.music;
+package com.denztri.denzsakura.ui.media.tab.music;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

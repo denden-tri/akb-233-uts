@@ -1,4 +1,4 @@
-package com.denztri.denzsakura.ui.video;
+package com.denztri.denzsakura.ui.media.tab.video;
 
 import androidx.lifecycle.ViewModel;
 

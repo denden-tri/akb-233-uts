@@ -1,4 +1,4 @@
-package com.denztri.denzsakura.ui.music;
+package com.denztri.denzsakura.ui.media.tab.music;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,8 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentMusicBinding;
-
-import java.util.Objects;
 
 public class MusicFragment extends Fragment {
 

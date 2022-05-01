@@ -27,10 +27,10 @@
         />
 
     <fragment
-        android:id="@+id/navigation_music"
-        android:name="com.denztri.denzsakura.ui.music.MusicFragment"
+        android:id="@+id/navigation_media"
+        android:name="com.denztri.denzsakura.ui.media.MediaFragment"
         android:label="@string/title_music"
-        tools:layout="@layout/fragment_music"
+        tools:layout="@layout/fragment_media"
         />
 
     <fragment

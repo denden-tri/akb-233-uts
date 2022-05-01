@@ -8,6 +8,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/appbar_title"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-        android:textColor="?attr/colorOnPrimary"
         />
 </LinearLayout>

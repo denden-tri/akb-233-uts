@@ -1,7 +1,6 @@
-package com.denztri.denzsakura.ui.video;
+package com.denztri.denzsakura.ui.media.tab.video;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.db.Video;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import java.util.List;
@@ -22,10 +19,14 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
     private List<Video> videoList;
     private Lifecycle lifecycle;
 
-    public VideoListAdapter( Lifecycle lifecycle) {
+    public VideoListAdapter( Lifecycle lifecycle, List<Video> list) {
         this.lifecycle = lifecycle;
+        this.videoList = list;
     }
 
+    public List<Video> getVideoList() {
+        return videoList;
+    }
 
     public void setVideoList(List<Video> videoList) {
         this.videoList = videoList;
@@ -34,7 +35,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
     @NonNull
     @Override
     public VideoListAdapter.VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        YouTubePlayerView youTubePlayerView =(YouTubePlayerView) LayoutInflater
+        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.recycle_video_row, parent, false);
         lifecycle.addObserver(youTubePlayerView);
@@ -52,7 +53,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
         if (videoList != null){
             return videoList.size();
         }else {
-            return 0;
+            return 2;
         }
     }
 
