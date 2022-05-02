@@ -44,5 +44,12 @@
     <string name="activity_photo">Activity Photo</string>
     <string name="db_refresh_on_dev">DB Refresh on DEV</string>
     <string name="gallery_cat">Gambar Kucing</string>
+    <string name="title_video">Video</string>
+    <string name="title_media"><![CDATA[Music & Video]]></string>
+    <string name="tab_music">Music</string>
+    <string name="tab_videos">Videos</string>
+    <string name="judul_lagu">JUDUL LAGU</string>
+    <string name="artis_lagu">ARTIS LAGU</string>
+    <string name="cover_lagu">COVER LAGU</string>
 
 </resources>
