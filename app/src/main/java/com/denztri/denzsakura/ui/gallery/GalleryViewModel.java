@@ -17,7 +17,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class GalleryViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
     private MutableLiveData<List<GalleryList>> galleryLists;
 
     public LiveData<List<GalleryList>> getList() throws IOException {

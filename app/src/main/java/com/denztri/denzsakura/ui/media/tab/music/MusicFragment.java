@@ -8,14 +8,23 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentMusicBinding;
+import com.denztri.denzsakura.ui.gallery.GalleryListAdapter;
+
+import java.util.List;
 
 public class MusicFragment extends Fragment {
 
     private FragmentMusicBinding binding;
+
+    private MusicListAdapter musicListAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -25,11 +34,11 @@ public class MusicFragment extends Fragment {
         binding = FragmentMusicBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
-        textTitle.setText(R.string.title_music);
+        initRecycle();
 
-        final TextView textView = binding.textMusic;
-        musicViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        musicViewModel.getList().observe(getViewLifecycleOwner(),
+                musicLists -> musicListAdapter.setMusicLists(musicLists));
+
         return root;
     }
 
@@ -39,4 +48,12 @@ public class MusicFragment extends Fragment {
         binding = null;
     }
 
+    private void initRecycle(){
+        RecyclerView recyclerView = binding.musicRecycleView;
+        recyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext(),
+                LinearLayoutManager.VERTICAL,false));
+
+        musicListAdapter = new MusicListAdapter(binding.getRoot().getContext());
+        recyclerView.setAdapter(musicListAdapter);
+    }
 }
