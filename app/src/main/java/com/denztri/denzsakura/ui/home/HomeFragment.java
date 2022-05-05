@@ -1,5 +1,6 @@
 package com.denztri.denzsakura.ui.home;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
 
         TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
         textTitle.setText(R.string.title_home);

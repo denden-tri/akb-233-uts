@@ -28,4 +28,11 @@
         <item name="strokeColor">?attr/colorAccent</item>
         <item name="strokeWidth">1dp</item>
     </style>
+
+    <style name="Theme.DenzSakura.ButtonOutlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">?colorSecondary</item>
+        <item name="backgroundTint">@color/gunmetal_dark</item>
+        <item name="iconTint">?colorSecondary</item>
+    </style>
+
 </resources>

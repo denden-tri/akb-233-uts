@@ -18,6 +18,8 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static volatile boolean isClicked;
+
     @SuppressLint("InflateParams")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 .findFragmentById(R.id.nav_host_fragment_activity_main);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
-
         navView.setOnApplyWindowInsetsListener(null);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowCustomEnabled(true);

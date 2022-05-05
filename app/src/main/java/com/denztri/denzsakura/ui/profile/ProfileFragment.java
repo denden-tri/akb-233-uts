@@ -1,9 +1,11 @@
 package com.denztri.denzsakura.ui.profile;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,19 +31,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileFragment extends Fragment  {
+public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
     private FragmentProfileBinding binding;
-
-    Fragment findMeMap;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        findMeMap =  MapFragment.newInstance();
-        getChildFragmentManager().beginTransaction()
-                .replace(R.id.profile_find_me_linear, findMeMap)
-                .commit();
+
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -54,6 +51,10 @@ public class ProfileFragment extends Fragment  {
 
         TextView textTitle = requireActivity().findViewById(R.id.appbar_title);
         textTitle.setText(R.string.title_profile);
+
+        if (getActivity() != null && isAdded()){
+            addMapFragmnet();
+        }
 
         TextView igText = binding.profileContactIg;
         igText.setOnClickListener(view -> onCLickInstagram());
@@ -102,5 +103,37 @@ public class ProfileFragment extends Fragment  {
         startActivity(i);
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+    }
 
+
+    private void addMapFragmnet(){
+        SupportMapFragment mapFragment = SupportMapFragment.newInstance();
+        mapFragment.getMapAsync(this);
+        new Handler().postDelayed(() -> getChildFragmentManager()
+                .beginTransaction()
+                .add(R.id.profile_find_me_linear, mapFragment)
+                .commit(),1000);
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        List<Marker> markers = new ArrayList<>();
+        markers.add(googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(-6.9820635,107.8142747))
+                .title("Me (Proximity) Home Amigo")));
+        for (Marker m: markers
+        ) {
+            builder.include(m.getPosition());
+        }
+        LatLngBounds bounds = builder.build();
+
+        int padding = 0;
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,512,200, padding);
+
+        googleMap.moveCamera(cu);
+    }
 }
