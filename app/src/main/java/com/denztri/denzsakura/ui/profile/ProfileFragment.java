@@ -1,5 +1,6 @@
 package com.denztri.denzsakura.ui.profile;
 
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.denztri.denzsakura.BuildConfig;
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentProfileBinding;
 import com.google.android.gms.maps.CameraUpdate;
@@ -27,6 +29,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +67,9 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
         TextView waText = binding.profileContactNumber;
         waText.setOnClickListener(view -> onClickWhatsApp());
+
+        MaterialButton aboutBtn = binding.profileDialogButton;
+        aboutBtn.setOnClickListener(view -> showAbout());
 
         return root;
     }
@@ -135,5 +141,21 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,512,200, padding);
 
         googleMap.moveCamera(cu);
+    }
+
+    private void showAbout(){
+        final Dialog dialog = new Dialog(this.getContext());
+        dialog.setContentView(R.layout.dialog_profile_about);
+        dialog.setTitle(R.string.subtitle_about);
+
+        TextView aboutVersion = dialog.findViewById(R.id.dialog_about_version);
+        TextView appName = dialog.findViewById(R.id.dialog_about_app_name);
+
+        String version = "Version : " + BuildConfig.VERSION_NAME;
+
+        appName.setText(R.string.app_name);
+        aboutVersion.setText(version);
+
+        dialog.show();
     }
 }
