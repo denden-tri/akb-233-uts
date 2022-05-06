@@ -2,7 +2,6 @@ package com.denztri.denzsakura.ui.media;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
@@ -17,8 +16,6 @@ import android.widget.TextView;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentMediaBinding;
-import com.denztri.denzsakura.ui.daily.tab.ActivityFragment;
-import com.denztri.denzsakura.ui.daily.tab.FriendFragment;
 import com.denztri.denzsakura.ui.media.tab.music.MusicFragment;
 import com.denztri.denzsakura.ui.media.tab.video.VideoFragment;
 import com.google.android.material.tabs.TabLayout;

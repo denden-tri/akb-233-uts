@@ -14,11 +14,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.denztri.denzsakura.R;
 
 import com.denztri.denzsakura.databinding.FragmentDailyBinding;
-import com.denztri.denzsakura.ui.daily.tab.ActivityFragment;
-import com.denztri.denzsakura.ui.daily.tab.FriendFragment;
+import com.denztri.denzsakura.ui.daily.tab.activity.ActivityFragment;
+import com.denztri.denzsakura.ui.daily.tab.friend.FriendFragment;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.Objects;
 
 public class DailyFragment extends Fragment {
 

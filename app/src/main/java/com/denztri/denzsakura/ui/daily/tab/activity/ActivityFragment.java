@@ -1,4 +1,4 @@
-package com.denztri.denzsakura.ui.daily.tab;
+package com.denztri.denzsakura.ui.daily.tab.activity;
 
 import android.os.Bundle;
 import android.os.Handler;

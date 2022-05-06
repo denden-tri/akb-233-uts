@@ -1,4 +1,4 @@
-package com.denztri.denzsakura.ui.daily.tab;
+package com.denztri.denzsakura.ui.daily.tab.friend;
 
 import androidx.lifecycle.ViewModel;
 
