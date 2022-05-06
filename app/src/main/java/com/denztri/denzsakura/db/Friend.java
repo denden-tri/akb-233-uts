@@ -27,10 +27,8 @@ public class Friend {
     public static Friend[] populateData(){
         return new Friend[]{
           new Friend("Tri","Tafriyadi", "ic_tri_chad"),
-          new Friend("Tzuyu","Twice", "ic_cuyu"),
           new Friend("Najib", "Raffi", "ic_jib"),
-                new Friend("Rheza","Pramana", "ic_baseline_person_24"),
-                new Friend("Miyawaki", "Sakura", "ic_cat_sakura")
+          new Friend("Rheza","Pramana", "ic_rheza"),
         };
     }
 }

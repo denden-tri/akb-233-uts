@@ -72,4 +72,5 @@
     <string name="next">next</string>
     <string name="back">back</string>
     <string name="click_button_to_close_this_screen">click button to close this screen</string>
+    <string name="placeholder">PLACEHOLDER</string>
 </resources>
