@@ -22,14 +22,14 @@
 
     <!-- Home and profile-->
     <string name="me_name">Denden Triana</string>
-    <string name="me_description">Battery about to die</string>
-    <string name="me_hobby">Ngidol</string>
+    <string name="me_description">Bergeming/Mengoding</string>
+    <string name="me_hobby">Geming</string>
     <string name="sub_hobby">Hobby</string>
     <string name="me_makes">Potato 🥔🥔</string>
     <string name="me_mikes">Mineral Water</string>
     <string name="sub_makes">Fav Food</string>
     <string name="sub_mikes">Fav Drink</string>
-    <string name="me_cita">Placeholder</string>
+    <string name="me_cita">Backend Developer</string>
     <string name="sub_cita">Cita-Cita</string>
     <string name="sub_interested_to">Interested to</string>
     <string name="nodejs_logo">NodeJS Logo</string>
@@ -45,7 +45,7 @@
     <string name="db_refresh_on_dev">DB Refresh on DEV</string>
     <string name="gallery_cat">Gambar Kucing</string>
     <string name="title_video">Video</string>
-    <string name="title_media"><![CDATA[Music & Video]]></string>
+    <string name="title_media">Media</string>
     <string name="tab_music">Music</string>
     <string name="tab_videos">Videos</string>
     <string name="judul_lagu">JUDUL LAGU</string>
@@ -56,9 +56,20 @@
     <string name="profile_ig">\@denzsakura</string>
     <string name="profile_email">denzsakura@proton.me</string>
     <string name="find_me">Find Me</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_about">About</string>
     <string name="version">Version :</string>
-
+    <string name="walkthrought">Walkthrought</string>
+    <string name="close_button">Close</string>
+    <string name="welcome">WELCOME</string>
+    <string name="to">TO</string>
+    <string name="continue_text">Click the button to continue</string>
+    <string name="page_2_nav">Use Bottom Navbar to navigate between menu</string>
+    <string name="page_2_tab">Use Tab to navigate between submenu</string>
+    <string name="nav_menu">Nav Menu</string>
+    <string name="tab_item">Tab Item</string>
+    <string name="that_s_it">That\'s it!!</string>
+    <string name="next">next</string>
+    <string name="back">back</string>
+    <string name="click_button_to_close_this_screen">click button to close this screen</string>
 </resources>

@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_dark"
-    >
+    android:padding="16dp">
+    <ImageView
+        android:id="@+id/page_2_nav_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_page_2_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/nav_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_page_2"
-        android:gravity="center"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pager_2"
+        android:text="@string/page_2_nav"
+        android:id="@+id/page_2_nav_txt"
+        style="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="@+id/page_2_nav_img"
+        app:layout_constraintStart_toStartOf="@+id/page_2_nav_img"
+        app:layout_constraintTop_toTopOf="@+id/page_2_nav_img" />
+
+    <ImageView
+        android:id="@+id/page_2_tab_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/tab_item"
+        android:src="@drawable/ic_page_2_tab"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/page_2_tab_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/page_2_tab"
+        style="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="@+id/page_2_tab_img"
+        app:layout_constraintStart_toStartOf="@+id/page_2_tab_img"
+        app:layout_constraintTop_toTopOf="@+id/page_2_tab_img" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,14 +2,39 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
     <TextView
-        android:id="@+id/txt_page_1"
-        android:gravity="center"
+        android:id="@+id/page_1_welcome"
+        style="@style/Theme.DenzSakura.PagerText"
+        android:text="@string/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pager_1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/page_1_to"
+        style="@style/Theme.DenzSakura.PagerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page_1_welcome" />
+    <TextView
+        android:id="@+id/page_1_appname"
+        style="@style/Theme.DenzSakura.PagerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page_1_to" />
+    <TextView
+        android:id="@+id/page_1_next_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/continue_text"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
