@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.denztri.denzsakura.R;
 
 import java.util.List;
@@ -43,6 +44,7 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
         Glide.with(context)
                 .load(url)
                 .placeholder(R.drawable.ic_baseline_image_24)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .fitCenter()
                 .centerCrop()
                 .fallback(R.drawable.ic_baseline_broken_image_24)
