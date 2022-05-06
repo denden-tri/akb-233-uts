@@ -17,16 +17,13 @@ import java.util.List;
 
 public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.VideoViewHolder> {
     private List<Video> videoList;
-    private Lifecycle lifecycle;
+    private final Lifecycle lifecycle;
 
     public VideoListAdapter( Lifecycle lifecycle, List<Video> list) {
         this.lifecycle = lifecycle;
         this.videoList = list;
     }
 
-    public List<Video> getVideoList() {
-        return videoList;
-    }
 
     public void setVideoList(List<Video> videoList) {
         this.videoList = videoList;
@@ -58,20 +55,21 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
     }
 
     public static class VideoViewHolder extends RecyclerView.ViewHolder{
-        private YouTubePlayerView  youTubePlayerView;
         private YouTubePlayer youTubePlayer;
         private String currentVideoId;
 
         public VideoViewHolder(@NonNull YouTubePlayerView playerView) {
             super(playerView);
 
-            youTubePlayerView = playerView;
-
-            youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            playerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady(@NonNull YouTubePlayer initYouTubePlayer) {
                     youTubePlayer = initYouTubePlayer;
-                    youTubePlayer.cueVideo(currentVideoId,0);
+                    if (currentVideoId.equals("dQw4w9WgXcQ")) {
+                        youTubePlayer.loadVideo(currentVideoId, 0);
+                    }else {
+                        youTubePlayer.cueVideo(currentVideoId, 0);
+                    }
                 }
             });
         }
