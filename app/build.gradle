@@ -27,7 +27,7 @@ android {
             def localProperties = new Properties()
             localProperties.load(new FileInputStream(rootProject.file("local.properties")))
             // Use the object to access properties
-            storeFile file(localProperties['STORE_FILE'])
+            storeFile file("actions-key.jks")
             storePassword localProperties['STORE_PASSWORD']
             keyPassword localProperties['KEY_PASSWORD']
             keyAlias localProperties['KEY_ALIAS']
