@@ -30,7 +30,8 @@ jobs:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD  }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD  }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS  }}
-        run: echo MAP_API_KEY="$MAP_API_KEY" > ./local.properties
+        run: |
+          echo MAP_API_KEY="$MAP_API_KEY" > ./local.properties
           echo STORE_FILE="$STORE_FILE" > ./local.properties
           echo STORE_PASSWORD="$STORE_PASSWORD" > ./local.properties
           echo KEY_PASSWORD="$KEY_PASSWORD" > ./local.properties
