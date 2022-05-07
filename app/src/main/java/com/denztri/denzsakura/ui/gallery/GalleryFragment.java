@@ -19,6 +19,13 @@ import com.denztri.denzsakura.databinding.FragmentGalleryBinding;
 
 import java.io.IOException;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 27-04-2022
+ **/
+
 public class GalleryFragment extends Fragment {
     private GalleryListAdapter galleryListAdapter;
     private FragmentGalleryBinding binding;

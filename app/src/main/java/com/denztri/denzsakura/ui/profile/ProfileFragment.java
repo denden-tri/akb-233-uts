@@ -34,6 +34,13 @@ import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 05-05-2022
+ **/
+
 public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
     private FragmentProfileBinding binding;

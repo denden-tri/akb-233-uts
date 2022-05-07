@@ -16,6 +16,13 @@ import com.denztri.denzsakura.R;
 
 import java.util.List;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 30-04-2022
+ **/
+
 public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.MusicListHolder> {
     private final Context context;
     private List<MusicList> musicLists;

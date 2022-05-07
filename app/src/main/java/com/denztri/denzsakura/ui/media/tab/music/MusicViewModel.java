@@ -15,6 +15,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 30-04-2022
+ **/
+
 public class MusicViewModel extends ViewModel {
     private MutableLiveData<List<MusicList>> musicLists;
 

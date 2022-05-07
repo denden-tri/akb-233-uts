@@ -16,9 +16,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 25-04-2022
+ **/
 
-    private static volatile boolean isClicked;
+public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("InflateParams")
     @Override

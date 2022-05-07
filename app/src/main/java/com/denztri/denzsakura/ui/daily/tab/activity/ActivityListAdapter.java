@@ -17,6 +17,13 @@ import com.denztri.denzsakura.db.Activity;
 
 import java.util.List;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 25-04-2022
+ **/
+
 public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapter.ActivityViewHolder> {
     private final Context context;
     private List<Activity> activityList;

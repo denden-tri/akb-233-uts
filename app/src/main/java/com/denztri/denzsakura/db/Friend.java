@@ -4,6 +4,13 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 29-04-2022
+ **/
+
 @Entity
 public class Friend {
     @PrimaryKey(autoGenerate = true)

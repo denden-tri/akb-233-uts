@@ -18,6 +18,13 @@ import com.denztri.denzsakura.ui.daily.tab.activity.ActivityFragment;
 import com.denztri.denzsakura.ui.daily.tab.friend.FriendFragment;
 import com.google.android.material.tabs.TabLayout;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 256-04-2022
+ **/
+
 public class DailyFragment extends Fragment {
 
     private FragmentDailyBinding binding;

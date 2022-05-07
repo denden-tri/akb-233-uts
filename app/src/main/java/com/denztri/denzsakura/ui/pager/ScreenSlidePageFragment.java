@@ -12,6 +12,13 @@ import com.denztri.denzsakura.MainActivity;
 import com.denztri.denzsakura.R;
 import com.google.android.material.button.MaterialButton;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 27-04-2022
+ **/
+
 public class ScreenSlidePageFragment extends Fragment {
 
     private ViewGroup mView;

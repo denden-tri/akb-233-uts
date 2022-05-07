@@ -21,6 +21,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 01-05-2022
+ **/
+
 public class VideoFragment extends Fragment {
 
     private FragmentVideoBinding binding;

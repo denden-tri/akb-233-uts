@@ -9,6 +9,13 @@ import androidx.core.splashscreen.SplashScreen;
 
 import com.denztri.denzsakura.ui.pager.ScreenSlidePagerActivity;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 25-04-2022
+**/
+
 public class RoutingActivity extends AppCompatActivity {
 
     @Override

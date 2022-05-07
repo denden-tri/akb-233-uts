@@ -5,6 +5,13 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 27-04-2022
+ **/
+
 public class GalleryList {
 
     @SerializedName("breeds")

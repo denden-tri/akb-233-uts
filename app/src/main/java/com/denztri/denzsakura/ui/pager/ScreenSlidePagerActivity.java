@@ -18,6 +18,13 @@ import com.denztri.denzsakura.ui.page.SecondPageFragment;
 import com.denztri.denzsakura.ui.page.ThirdPageFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 27-04-2022
+ **/
+
 public class ScreenSlidePagerActivity extends FragmentActivity {
     private static final int NUM_PAGES = 3;
 

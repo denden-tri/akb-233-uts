@@ -20,6 +20,13 @@ import com.denztri.denzsakura.ui.media.tab.music.MusicFragment;
 import com.denztri.denzsakura.ui.media.tab.video.VideoFragment;
 import com.google.android.material.tabs.TabLayout;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 30-04-2022
+ **/
+
 public class MediaFragment extends Fragment {
 
     private FragmentMediaBinding binding;

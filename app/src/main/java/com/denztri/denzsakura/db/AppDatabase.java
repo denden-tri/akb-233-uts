@@ -11,6 +11,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 25-04-2022
+ **/
+
 @Database(entities = {Friend.class, Activity.class, Video.class}, version = 4,
         autoMigrations = {@AutoMigration(from = 3, to = 4)})
 public abstract class AppDatabase extends RoomDatabase {

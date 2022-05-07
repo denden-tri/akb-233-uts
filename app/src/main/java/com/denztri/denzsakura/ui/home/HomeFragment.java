@@ -1,6 +1,5 @@
 package com.denztri.denzsakura.ui.home;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentHomeBinding;
+
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 26-04-2022
+ **/
 
 public class HomeFragment extends Fragment {
 

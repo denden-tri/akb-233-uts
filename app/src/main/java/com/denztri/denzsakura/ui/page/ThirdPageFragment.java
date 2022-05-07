@@ -9,6 +9,13 @@ import androidx.fragment.app.Fragment;
 
 import com.denztri.denzsakura.R;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 27-04-2022
+ **/
+
 public class ThirdPageFragment extends Fragment {
 
     @Override

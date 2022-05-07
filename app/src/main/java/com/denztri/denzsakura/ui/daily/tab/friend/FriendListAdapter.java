@@ -16,6 +16,13 @@ import com.denztri.denzsakura.db.Friend;
 
 import java.util.List;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 29-04-2022
+ **/
+
 public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.FriendViewHolder> {
     private final Context context;
     private List<Friend> friendList;

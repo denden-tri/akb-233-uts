@@ -3,6 +3,13 @@ package com.denztri.denzsakura.ui.media.tab.music;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 30-04-2022
+ **/
+
 public class MusicImagesList {
     @SerializedName("height")
     @Expose

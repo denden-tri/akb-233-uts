@@ -21,6 +21,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 29-04-2022
+ **/
+
 public class FriendFragment extends Fragment {
     private FriendListAdapter friendListAdapter;
 

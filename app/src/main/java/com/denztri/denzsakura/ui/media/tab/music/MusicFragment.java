@@ -20,6 +20,13 @@ import com.denztri.denzsakura.ui.gallery.GalleryListAdapter;
 
 import java.util.List;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 30-04-2022
+ **/
+
 public class MusicFragment extends Fragment {
 
     private FragmentMusicBinding binding;

@@ -4,6 +4,13 @@ import android.view.View;
 
 import androidx.viewpager2.widget.ViewPager2;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 27-04-2022
+ **/
+
 public class ZoomOutPageTransformer implements ViewPager2.PageTransformer{
     private static final float MIN_SCALE = 0.85f;
     private static final float MIN_ALPHA = 0.5f;
