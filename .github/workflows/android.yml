@@ -20,7 +20,7 @@ jobs:
           cache: gradle
       - name: Set Secret Properties
         env:
-          LOCAL_PROPERTIES: ${{ secrets.LOCAL_PROPERTIES }}
+          LOCAL_PROPERTIES: ${{ secrets.LOCAL_PRO }}
         run: echo "$LOCAL_PROPERTIES" > ./local.properties
 
       - name: Prepare release keystore
