@@ -18,7 +18,15 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: gradle
-
+      - name: Set Secret Properties
+          env:
+            LOCAL_PROPERTIES: ${{ secrets.LOCAL_PROPERTIES }}
+        run: echo "$LOCAL_PROPERTIES" > ./local.properties
+      
+      - name: Prepare release keystore
+        run: 
+          echo "${{ secrets.BASE_64_SIGNING_KEY }}" > actions-key.jks.asc
+          gpg -d --passphrase "${{ secrets.BASE_64_SIGNING_KEY_PASSPHRASE }}" --batch actions-key.jks.asc > app/actions-key.jks
       - name: Get Secret
         env:
           MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
