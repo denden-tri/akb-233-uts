@@ -18,10 +18,6 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: gradle
-      - name: Set Secret Properties
-        env:
-          LOCAL_PROPERTIES: ${{ secrets.LOCAL_PRO }}
-        run: echo "$LOCAL_PROPERTIES" > ./local.properties
 
       - name: Prepare release keystore
         run: |
@@ -30,7 +26,15 @@ jobs:
       - name: Get Secret
         env:
           MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+          STORE_FILE: ${{ secrets.STORE_FILE  }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD  }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD  }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS  }}
         run: echo MAP_API_KEY="$MAP_API_KEY" > ./local.properties
+          echo STORE_FILE="$STORE_FILE" > ./local.properties
+          echo STORE_PASSWORD="$STORE_PASSWORD" > ./local.properties
+          echo KEY_PASSWORD="$KEY_PASSWORD" > ./local.properties
+          echo KEY_ALIAS="$KEY_ALIAS" > ./local.properties
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
