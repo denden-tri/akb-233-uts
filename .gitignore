@@ -15,3 +15,5 @@
 local.properties
 *.log
 *.jks
+/app/debug
+*.bak
