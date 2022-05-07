@@ -35,7 +35,8 @@ jobs:
           echo STORE_PASSWORD="$STORE_PASSWORD" > ./local.properties
           echo KEY_PASSWORD="$KEY_PASSWORD" > ./local.properties
           echo KEY_ALIAS="$KEY_ALIAS" > ./local.properties
-
+      - name: Show local properties
+        run: cat local.properties
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build debug with Gradle
