@@ -22,7 +22,7 @@ android {
     }
 
     signingConfigs {
-        release {
+        debug {
             // Load local.properties in an object
             def localProperties = new Properties()
             localProperties.load(new FileInputStream(rootProject.file("local.properties")))
