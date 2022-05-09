@@ -164,7 +164,14 @@
                 android:layout_height="200dp"
                 android:id="@+id/profile_find_me_linear"
                 app:layout_constraintTop_toBottomOf="@id/profile_find_me_title"
-                android:orientation="vertical" />
+                android:orientation="vertical">
+                <androidx.fragment.app.FragmentContainerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/profile_map_findme"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    />
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

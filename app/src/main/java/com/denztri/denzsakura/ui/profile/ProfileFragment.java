@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +45,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
     private FragmentProfileBinding binding;
 
-    private SupportMapFragment mapFragment;
+    LatLngBounds.Builder builder = new LatLngBounds.Builder();
+    List<Marker> markers = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +58,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
                              ViewGroup container, Bundle savedInstanceState) {
         ProfileViewModel profileBinding =
                 new ViewModelProvider(this).get(ProfileViewModel.class);
+
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -130,18 +131,14 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
 
     private void addMapFragment(){
-        mapFragment = SupportMapFragment.newInstance();
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                                            .findFragmentById(R.id.profile_map_findme);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
-        new Handler().postDelayed(() -> getChildFragmentManager()
-                .beginTransaction()
-                .add(R.id.profile_find_me_linear, mapFragment)
-                .commit(),1000);
     }
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LatLngBounds.Builder builder = new LatLngBounds.Builder();
-        List<Marker> markers = new ArrayList<>();
         markers.add(googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(-6.9820635,107.8142747))
                 .title("Me (Proximity) Home Amigo")));
@@ -151,9 +148,9 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
         }
         LatLngBounds bounds = builder.build();
 
-        int padding = 0;
+        int padding = 10;
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,512,200, padding);
-
+        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         googleMap.moveCamera(cu);
     }
 
@@ -179,5 +176,10 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
         if(nighModeFlags == Configuration.UI_MODE_NIGHT_YES){
             tView.getCompoundDrawablesRelative()[0].setTint(getResources().getColor(R.color.white));
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }
