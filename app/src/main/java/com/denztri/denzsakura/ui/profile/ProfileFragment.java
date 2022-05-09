@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,6 +46,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
     private FragmentProfileBinding binding;
 
+    private SupportMapFragment mapFragment;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +77,10 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
         TextView waText = binding.profileContactNumber;
         waText.setOnClickListener(view -> onClickWhatsApp());
+
+        iconTintContact(igText);
+        iconTintContact(emailText);
+        iconTintContact(waText);
 
         MaterialButton aboutBtn = binding.profileDialogButton;
         aboutBtn.setOnClickListener(view -> showAbout());
@@ -123,7 +130,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
 
 
     private void addMapFragmnet(){
-        SupportMapFragment mapFragment = SupportMapFragment.newInstance();
+        mapFragment = SupportMapFragment.newInstance();
         mapFragment.getMapAsync(this);
         new Handler().postDelayed(() -> getChildFragmentManager()
                 .beginTransaction()
@@ -164,5 +171,13 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
         aboutVersion.setText(version);
 
         dialog.show();
+    }
+
+    private void iconTintContact(TextView tView){
+        int nighModeFlags = requireContext().getResources().getConfiguration().uiMode &
+                Configuration.UI_MODE_NIGHT_MASK;
+        if(nighModeFlags == Configuration.UI_MODE_NIGHT_YES){
+            tView.getCompoundDrawablesRelative()[0].setTint(getResources().getColor(R.color.white));
+        }
     }
 }
