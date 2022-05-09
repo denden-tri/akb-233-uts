@@ -10,8 +10,8 @@ android {
         applicationId "com.denztri.denzsakura"
         minSdk 21
         targetSdk 32
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions{
@@ -24,7 +24,7 @@ android {
     signingConfigs {
         debug {
             // Load local.properties in an object
-            def Properties localProperties = new Properties()
+            Properties localProperties = new Properties()
             localProperties.load(new FileInputStream("local.properties"))
             // Use the object to access properties
             storeFile file(localProperties['STORE_FILE'])
