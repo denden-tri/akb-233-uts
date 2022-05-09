@@ -66,7 +66,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
         textTitle.setText(R.string.title_profile);
 
         if (getActivity() != null && isAdded()){
-            addMapFragmnet();
+            addMapFragment();
         }
 
         TextView igText = binding.profileContactIg;
@@ -129,7 +129,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback  {
     }
 
 
-    private void addMapFragmnet(){
+    private void addMapFragment(){
         mapFragment = SupportMapFragment.newInstance();
         mapFragment.getMapAsync(this);
         new Handler().postDelayed(() -> getChildFragmentManager()
