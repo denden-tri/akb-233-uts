@@ -6,6 +6,13 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * NIM                  : 10119233
+ * NAMA                 : Denden Triana
+ * Kelas                : IF-6
+ * Tanggal Pengerjaan   : 12-05-2022
+ **/
+
 public class ServiceGenerator {
     private static final String BASE_URL = BuildConfig.API_URL;
 
