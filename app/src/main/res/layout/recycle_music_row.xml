@@ -26,11 +26,12 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/music_btn_play"
-            android:layout_margin="1dp"
+            android:layout_margin="0dp"
             style="@style/Theme.DenzSakura.ButtonOutlined.Square"
             android:layout_width="52dp"
             android:layout_height="52dp"
             app:icon="@drawable/ic_baseline_play_arrow_24"
+            android:contentDescription="@string/play_pause"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="@+id/music_artist"
             app:layout_constraintEnd_toEndOf="parent"
