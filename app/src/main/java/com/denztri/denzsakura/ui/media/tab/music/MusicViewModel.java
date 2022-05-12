@@ -6,14 +6,13 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.denztri.denzsakura.apicall.MusicApi;
+import com.denztri.denzsakura.apicall.ServiceGenerator;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * NIM                  : 10119233
@@ -35,13 +34,7 @@ public class MusicViewModel extends ViewModel {
     }
 
     public void loadMusicList() {
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://us-central1-akb-uts-cloud-functions.cloudfunctions.net/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        MusicApi service = retrofit.create(MusicApi.class);
+        MusicApi service = ServiceGenerator.createService(MusicApi.class);
         service.listMusic().enqueue(new Callback<List<MusicList>>() {
             @Override
             public void onResponse(@NonNull Call<List<MusicList>> call, @NonNull Response<List<MusicList>> response) {

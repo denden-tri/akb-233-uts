@@ -36,7 +36,10 @@ android {
 
     buildTypes {
         debug{
+            Properties localProo = new Properties()
+            localProo.load(new FileInputStream("local.properties"))
             signingConfig signingConfigs.debug
+            buildConfigField "String", "API_URL","\""+localProo['CLOUD_FUNCTIONS_URL']+"\""
         }
         release {
             minifyEnabled false

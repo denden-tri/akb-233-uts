@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.denztri.denzsakura.apicall.GalleryApi;
+import com.denztri.denzsakura.apicall.ServiceGenerator;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,8 +14,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * NIM                  : 10119233
@@ -36,14 +35,7 @@ public class GalleryViewModel extends ViewModel {
     }
 
     public void loadGalleryList() {
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://us-central1-akb-uts-cloud-functions.cloudfunctions.net/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        GalleryApi service = retrofit.create(GalleryApi.class);
-//        List<GalleryList> galleryListsRes = service.listGallery().execute().body();
+        GalleryApi service = ServiceGenerator.createService(GalleryApi.class);
         service.listGallery().enqueue(new Callback<List<GalleryList>>() {
             @Override
             public void onResponse(@NonNull Call<List<GalleryList>> call, @NonNull Response<List<GalleryList>> response) {
