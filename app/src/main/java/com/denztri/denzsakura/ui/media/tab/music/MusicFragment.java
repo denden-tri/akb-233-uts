@@ -63,4 +63,10 @@ public class MusicFragment extends Fragment {
         musicListAdapter = new MusicListAdapter(binding.getRoot().getContext());
         recyclerView.setAdapter(musicListAdapter);
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        musicListAdapter.stopPlayer();
+    }
 }
