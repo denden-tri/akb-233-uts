@@ -25,6 +25,9 @@ public class MusicList {
     @SerializedName("song")
     @Expose
     private String song;
+    @SerializedName("previewUrl")
+    @Expose
+    private String previewUrl;
 
     public String getAlbumName() {
         return albumName;
@@ -58,5 +61,12 @@ public class MusicList {
         this.song = song;
     }
 
+    public String getPreviewUrl() {
+        return previewUrl;
+    }
+
+    public void setPreviewUrl(String previewUrl) {
+        this.previewUrl = previewUrl;
+    }
 }
 
