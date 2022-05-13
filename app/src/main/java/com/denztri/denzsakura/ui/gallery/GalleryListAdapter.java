@@ -1,5 +1,6 @@
 package com.denztri.denzsakura.ui.gallery;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,12 +26,15 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
     private final Context context;
     private List<GalleryList> galleryLists;
 
+
     public GalleryListAdapter(Context context){
         this.context = context;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setGalleryLists(List<GalleryList> list){
         this.galleryLists = list;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -51,7 +55,6 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
                 .centerCrop()
                 .fallback(R.drawable.ic_baseline_broken_image_24)
                 .into(holder.img);
-        notifyItemChanged(position);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.denztri.denzsakura.ui.gallery;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentGalleryBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
 
 /**
  * NIM                  : 10119233
@@ -30,6 +33,7 @@ import java.io.IOException;
 public class GalleryFragment extends Fragment {
     private GalleryListAdapter galleryListAdapter;
     private FragmentGalleryBinding binding;
+    private RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -48,18 +52,28 @@ public class GalleryFragment extends Fragment {
 
         initRecycle();
 
-            new Handler().postDelayed(() -> {
-                try {
-                    galleryViewModel.getList().observe(getViewLifecycleOwner(),
-                            galleryLists -> {
-                                galleryListAdapter.setGalleryLists(galleryLists);
-                                progressBar.setVisibility(View.GONE);
-                            });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }, 1000);
+        new Handler().postDelayed(() -> {
+            try {
+                galleryViewModel.getList().observe(getViewLifecycleOwner(),
+                        galleryLists -> {
+                            if (recyclerView.getVisibility() == View.GONE) recyclerView.setVisibility(View.VISIBLE);
+                            galleryListAdapter.setGalleryLists(galleryLists);
+                            progressBar.setVisibility(View.GONE);
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }, 1000);
 
+        FloatingActionButton fabRefresh = binding.galleryFab;
+        fabRefresh.setOnClickListener(view -> {
+            recyclerView.setVisibility(View.GONE);
+            progressBar.setVisibility(View.VISIBLE);
+            Executors.newSingleThreadExecutor().execute(() -> {
+                galleryViewModel.deleteGallery();
+                new Handler(Looper.getMainLooper()).post(galleryViewModel::loadGalleryList);
+            });
+        });
 
         return root;
     }
@@ -71,7 +85,7 @@ public class GalleryFragment extends Fragment {
     }
 
     private void initRecycle(){
-        RecyclerView recyclerView = binding.galleryRecycle;
+        recyclerView = binding.galleryRecycle;
         recyclerView.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(),
                 3));
 

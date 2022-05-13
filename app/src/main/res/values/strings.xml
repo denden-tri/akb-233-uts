@@ -74,4 +74,5 @@
     <string name="click_button_to_close_this_screen">click button to close this screen</string>
     <string name="placeholder">PLACEHOLDER</string>
     <string name="play_pause">Play Pause</string>
+    <string name="refresh_gallery">Refresh Gallery</string>
 </resources>

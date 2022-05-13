@@ -21,7 +21,8 @@ public class GalleryList {
     @PrimaryKey
     @SerializedName("id")
     @Expose
-    private String id;
+    @NonNull
+    private String id = "";
     @ColumnInfo(name = "url")
     @SerializedName("url")
     @Expose

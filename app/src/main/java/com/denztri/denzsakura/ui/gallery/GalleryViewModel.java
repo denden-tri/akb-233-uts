@@ -74,4 +74,8 @@ public class GalleryViewModel extends AndroidViewModel {
             }
         });
     }
+
+    public void deleteGallery(){
+        galleryRepo.deleteAllGall();
+    }
 }
