@@ -1,6 +1,7 @@
 package com.denztri.denzsakura.ui.gallery;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,15 +48,18 @@ public class GalleryFragment extends Fragment {
 
         initRecycle();
 
-        try {
-            galleryViewModel.getList().observe(getViewLifecycleOwner(),
-                    galleryLists -> {
-                        galleryListAdapter.setGalleryLists(galleryLists);
-                        progressBar.setVisibility(View.GONE);
-                    });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            new Handler().postDelayed(() -> {
+                try {
+                    galleryViewModel.getList().observe(getViewLifecycleOwner(),
+                            galleryLists -> {
+                                galleryListAdapter.setGalleryLists(galleryLists);
+                                progressBar.setVisibility(View.GONE);
+                            });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }, 1000);
+
 
         return root;
     }

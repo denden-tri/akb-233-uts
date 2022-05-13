@@ -1,9 +1,12 @@
 package com.denztri.denzsakura.ui.gallery;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
 
 /**
  * NIM                  : 10119233
@@ -12,14 +15,14 @@ import java.util.List;
  * Tanggal Pengerjaan   : 27-04-2022
  **/
 
+@Entity
 public class GalleryList {
 
-    @SerializedName("breeds")
-    @Expose
-    private List<Object> breeds = null;
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     private String id;
+    @ColumnInfo(name = "url")
     @SerializedName("url")
     @Expose
     private String url;
@@ -30,19 +33,14 @@ public class GalleryList {
     @Expose
     private Integer height;
 
-    public List<Object> getBreeds() {
-        return breeds;
-    }
 
-    public void setBreeds(List<Object> breeds) {
-        this.breeds = breeds;
-    }
 
+    @NonNull
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(@NonNull String id) {
         this.id = id;
     }
 
