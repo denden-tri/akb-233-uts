@@ -77,7 +77,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.Musi
     @Override
     public void onViewRecycled(@NonNull MusicListHolder holder) {
         super.onViewRecycled(holder);
-        if (playPos == holder.getBindingAdapterPosition()){
+        if (playPos == holder.getBindingAdapterPosition() && playinHolder != null ){
             updateNonPlayingView(playinHolder);
             playinHolder = null;
         }

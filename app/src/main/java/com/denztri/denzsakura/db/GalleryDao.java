@@ -3,7 +3,6 @@ package com.denztri.denzsakura.db;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.migration.AutoMigrationSpec;
 
 import com.denztri.denzsakura.ui.gallery.GalleryList;
 
@@ -17,7 +16,7 @@ import java.util.List;
  **/
 
 @Dao
-public interface GalleryDao extends AutoMigrationSpec {
+public interface GalleryDao {
 
     @Query("SELECT * FROM gallerylist")
     List<GalleryList> getAllGallery();
