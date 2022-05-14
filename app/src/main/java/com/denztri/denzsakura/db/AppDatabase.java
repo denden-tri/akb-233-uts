@@ -8,10 +8,13 @@ import androidx.room.Database;
 import androidx.room.RenameTable;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 import androidx.room.migration.AutoMigrationSpec;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.denztri.denzsakura.ui.gallery.GalleryList;
+import com.denztri.denzsakura.ui.media.tab.music.MusicList;
 
 import java.util.concurrent.Executors;
 
@@ -22,13 +25,15 @@ import java.util.concurrent.Executors;
  * Tanggal Pengerjaan   : 25-04-2022
  **/
 
-@Database(entities = {Friend.class, Activity.class, Video.class, GalleryList.class}, version = 6,
-        autoMigrations = {@AutoMigration(from = 5, to = 6, spec = AppDatabase.MyAutoMigration.class)})
+@Database(entities = {Friend.class, Activity.class, Video.class, GalleryList.class, MusicList.class}, version = 7,
+        autoMigrations = {@AutoMigration(from = 6, to = 7, spec = AppDatabase.MyAutoMigration.class)})
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract FriendDao   friendDao();
     public abstract ActivityDao activityDao();
     public abstract VideoDao    videoDao();
     public abstract GalleryDao  galleryDao();
+    public abstract MusicDao    musicDao();
 
     private static AppDatabase INSTANCE;
 
