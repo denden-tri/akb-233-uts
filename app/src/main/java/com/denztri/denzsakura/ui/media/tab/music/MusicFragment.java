@@ -13,9 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentMusicBinding;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.concurrent.Executors;
 
@@ -50,17 +51,25 @@ public class MusicFragment extends Fragment {
 
         initRecycle();
 
-        FloatingActionButton fabRefresh = binding.musicFab;
-        fabRefresh.setOnClickListener(view -> {
+        SwipeRefreshLayout swipeLayout = binding.musicSwipe;
+        swipeLayout.setProgressBackgroundColorSchemeResource(R.color.aquamarine);
+        swipeLayout.setColorSchemeResources(
+                R.color.gunmetal,
+                R.color.cyan_process,
+                R.color.carnation_pink,
+                R.color.wild_blue_yonder);
+        swipeLayout.setOnRefreshListener(() -> {
             recyclerView.setVisibility(View.GONE);
             progressBar.setVisibility(View.VISIBLE);
             musicListAdapter.stopPlayer();
             Executors.newSingleThreadExecutor().execute(() -> {
                 musicViewModel.deleteMusic();
-                new Handler(Looper.getMainLooper()).post(musicViewModel::loadMusicList);
+                new Handler(Looper.getMainLooper()).post(() -> {
+                        musicViewModel.loadMusicList();
+                        swipeLayout.setRefreshing(false);
+                });
             });
         });
-
 
         return root;
     }
