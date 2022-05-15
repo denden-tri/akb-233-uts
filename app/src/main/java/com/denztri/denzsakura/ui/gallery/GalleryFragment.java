@@ -90,6 +90,7 @@ public class GalleryFragment extends Fragment {
                 3));
 
         galleryListAdapter = new GalleryListAdapter(binding.getRoot().getContext());
+        galleryListAdapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
         recyclerView.setAdapter(galleryListAdapter);
     }
 

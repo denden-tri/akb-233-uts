@@ -7,6 +7,7 @@
     app:contentPadding="8dp"
     app:cardElevation="10dp"
     app:cardBackgroundColor="?colorPrimary"
+    android:id="@+id/friend_item_container"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="16dp"
+        android:id="@+id/friend_item"
         >
 
         <TextView

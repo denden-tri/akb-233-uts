@@ -6,16 +6,17 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.denztri.denzsakura.R;
 import com.denztri.denzsakura.databinding.FragmentVideoBinding;
-import com.denztri.denzsakura.db.AppDatabase;
-import com.denztri.denzsakura.db.Video;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.concurrent.Executor;
@@ -34,7 +35,7 @@ public class VideoFragment extends Fragment {
 
     private VideoListAdapter videoListAdapter;
 
-    private AppDatabase db;
+    private VideoViewModel videoViewModel;
 
     private final Executor executor = Executors.newSingleThreadExecutor();
 
@@ -47,7 +48,7 @@ public class VideoFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentVideoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        db = AppDatabase.getDbInstance(binding.getRoot().getContext());
+        videoViewModel = new ViewModelProvider(this).get(VideoViewModel.class);
         initRecycle();
 
         Handler handler = new Handler(Looper.getMainLooper());
@@ -74,24 +75,26 @@ public class VideoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-
-        db.videoDao().getAllVideosId().observe(getViewLifecycleOwner(),
-                videos -> {
-                    videoListAdapter = new VideoListAdapter(this.getLifecycle(), videos);
-                    recyclerView.setAdapter(videoListAdapter);
-                });
+        videoListAdapter = new VideoListAdapter(this.getLifecycle());
+        videoListAdapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
+        recyclerView.setAdapter(videoListAdapter);
     }
 
     private void loadVideoList(){
-        db.videoDao().getAllVideosId().observe(getViewLifecycleOwner(),
-                videos -> videoListAdapter.setVideoList(videos));
+        videoViewModel.getList().observe(getViewLifecycleOwner(), videos -> videoListAdapter.setVideoList(videos));
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        new Handler().postDelayed(this::loadVideoList, 1000);
     }
 
     public void deleteAllList(){
-        executor.execute(() -> db.videoDao().deleteAll());
+        executor.execute(() -> videoViewModel.deleteVideo());
     }
 
     public void repopulateList(){
-        executor.execute(() -> db.videoDao().insert(Video.populateData()));
+        executor.execute(() -> videoViewModel.repopulateVideo());
     }
 }

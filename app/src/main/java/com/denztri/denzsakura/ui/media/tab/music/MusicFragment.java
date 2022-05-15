@@ -59,8 +59,6 @@ public class MusicFragment extends Fragment {
                 R.color.carnation_pink,
                 R.color.wild_blue_yonder);
         swipeLayout.setOnRefreshListener(() -> {
-            recyclerView.setVisibility(View.GONE);
-            progressBar.setVisibility(View.VISIBLE);
             musicListAdapter.stopPlayer();
             Executors.newSingleThreadExecutor().execute(() -> {
                 musicViewModel.deleteMusic();
@@ -97,6 +95,7 @@ public class MusicFragment extends Fragment {
                 LinearLayoutManager.VERTICAL,false));
 
         musicListAdapter = new MusicListAdapter(binding.getRoot().getContext());
+        musicListAdapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
         recyclerView.setAdapter(musicListAdapter);
     }
 

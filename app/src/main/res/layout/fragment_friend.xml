@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.daily.tab.friend.FriendFragment"
+    android:id="@+id/friend_root"
     >
 
     <androidx.recyclerview.widget.RecyclerView

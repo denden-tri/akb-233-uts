@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.media.tab.music.MusicFragment">
+    tools:context=".ui.media.tab.music.MusicFragment"
+    android:id="@+id/music_root"
+    >
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"

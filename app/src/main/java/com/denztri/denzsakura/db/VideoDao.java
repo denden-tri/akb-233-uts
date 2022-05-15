@@ -17,10 +17,10 @@ import java.util.List;
 @Dao
 public interface VideoDao {
     @Query("SELECT * FROM video")
-    LiveData<List<Video>> getAllVideosId();
+    List<Video> getAllVideosId();
 
     @Insert()
-    void insert(Video... videos);
+    void insert(List<Video> videos);
 
     @Query("DELETE FROM video")
     void deleteAll();

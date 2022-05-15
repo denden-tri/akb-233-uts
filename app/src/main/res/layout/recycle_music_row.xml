@@ -9,11 +9,14 @@
     app:contentPadding="8dp"
     android:layout_marginTop="8dp"
     style="@style/Theme.DenzSakura.CardView"
+    android:id="@+id/music_item_container"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:id="@+id/gallery_item"
+        >
 
         <ImageView
             android:id="@+id/music_img"

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 .findFragmentById(R.id.nav_host_fragment_activity_main);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
-        navView.setOnApplyWindowInsetsListener(null);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.navigation_media, R.id.navigation_profile)
                 .build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(navView, navController);
     }
 
     @Override

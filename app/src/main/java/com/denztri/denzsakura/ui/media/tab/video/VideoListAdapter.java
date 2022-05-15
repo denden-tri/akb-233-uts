@@ -1,5 +1,6 @@
 package com.denztri.denzsakura.ui.media.tab.video;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -26,14 +27,14 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
     private List<Video> videoList;
     private final Lifecycle lifecycle;
 
-    public VideoListAdapter( Lifecycle lifecycle, List<Video> list) {
+    public VideoListAdapter( Lifecycle lifecycle) {
         this.lifecycle = lifecycle;
-        this.videoList = list;
     }
 
-
+    @SuppressLint("NotifyDataSetChanged")
     public void setVideoList(List<Video> videoList) {
         this.videoList = videoList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -52,12 +53,13 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
         holder.cueVideo(videoList.get(position).videoId);
     }
 
+
     @Override
     public int getItemCount() {
         if (videoList != null){
             return videoList.size();
         }else {
-            return 2;
+            return 0;
         }
     }
 
@@ -74,7 +76,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
                     youTubePlayer = initYouTubePlayer;
                     if (currentVideoId.equals("dQw4w9WgXcQ")) {
                         youTubePlayer.loadVideo(currentVideoId, 0);
-                    }else {
+                    } else {
                         youTubePlayer.cueVideo(currentVideoId, 0);
                     }
                 }

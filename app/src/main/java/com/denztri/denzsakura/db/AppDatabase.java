@@ -8,7 +8,6 @@ import androidx.room.Database;
 import androidx.room.RenameTable;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 import androidx.room.migration.AutoMigrationSpec;
 import androidx.sqlite.db.SupportSQLiteDatabase;
@@ -16,6 +15,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.denztri.denzsakura.ui.gallery.GalleryList;
 import com.denztri.denzsakura.ui.media.tab.music.MusicList;
 
+import java.util.Arrays;
 import java.util.concurrent.Executors;
 
 /**
@@ -50,7 +50,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             Executors.newSingleThreadExecutor().execute(() -> {
                                 getDbInstance(context).friendDao().insert(Friend.populateData());
                                 getDbInstance(context).activityDao().insert(Activity.populateData());
-                                getDbInstance(context).videoDao().insert(Video.populateData());
+                                getDbInstance(context).videoDao().insert(Arrays.asList(Video.populateData()));
                             });
 
                         }
